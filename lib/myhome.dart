@@ -23,6 +23,7 @@ import 'page/myAnimate/hero1.dart';
 import 'page/shared.dart';
 import 'page/redux/one.dart';
 import 'page/mysliver.dart';
+import 'page/bloc/blocDemo.dart';
 
 
 class MyHome extends StatelessWidget {
@@ -262,6 +263,15 @@ class MyHome extends StatelessWidget {
             onTap: (){
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) => SliverDemo()
+              ));
+            },
+          ),
+          ListTile(
+            title: Text('[Bloc]'),
+            trailing: Text('第十四天'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => BlocDemo()
               ));
             },
           ),
