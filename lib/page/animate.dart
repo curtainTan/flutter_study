@@ -22,14 +22,19 @@ class HomeScreenState extends State<HomeScreen>
     _pwController = TextEditingController();
     _animationController = AnimationController(
         vsync: this, duration: Duration(seconds: 2, milliseconds: 50));
+
     _animationTitle = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
         parent: _animationController, curve: Curves.fastOutSlowIn));
+        
     _animationTextField = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
         parent: _animationController,
         curve: Interval(0.4, 1.0, curve: Curves.fastOutSlowIn)));
+
     _animationButton = Tween(begin: -1.0, end: 0.0).animate(CurvedAnimation(
         parent: _animationController,
         curve: Interval(0.6, 1.0, curve: Curves.fastOutSlowIn)));
+
+        
     _animationController.forward();
 //    _animationController.repeat();
     super.initState();

@@ -25,6 +25,12 @@ import 'page/redux/one.dart';
 import 'page/mysliver.dart';
 import 'page/bloc/blocDemo.dart';
 import 'page/bloc/RxDartDemo.dart';
+import 'page/slive/sliver_one.dart';
+import 'page/slive/persistentHeader.dart';
+
+
+
+
 
 
 class MyHome extends StatelessWidget {
@@ -282,6 +288,24 @@ class MyHome extends StatelessWidget {
             onTap: (){
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) => RxDemoHome()
+              ));
+            },
+          ),
+          ListTile(
+            title: Text('[Sliver Demo]'),
+            trailing: Text('第十五天'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => ScrollDemoPage()
+              ));
+            },
+          ),
+          ListTile(
+            title: Text('[Sliver PersistentHeader Demo]'),
+            trailing: Text('第十五天'),
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => SliverPersistentHeaderDemo()
               ));
             },
           ),

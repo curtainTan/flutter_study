@@ -34,10 +34,24 @@ class _RxDemoHomeState extends State<RxDemoHome> {
   void initState() {
     super.initState();
 
-    Observable<String> _observable = 
-      Observable( Stream.fromIterable(['hello', 'word']) );
+    // Observable<String> _observable = 
+      // Observable( Stream.fromIterable(['hello', 'word']) );
+      // Observable.fromFuture( Future.value('hello ~~~') );
+      // Observable.fromIterable(["hello ", "你好...."]);
+      // Observable.just("hello ~~~~");
+    //   Observable.periodic( Duration( seconds: 2 ), (x) => x.toString() );
 
-    _observable.listen(print);
+    // _observable.listen(print);
+
+    PublishSubject<String> _subject =PublishSubject<String>();
+
+    _subject.listen( (data) => print( 'listen 1: $data' ) );
+
+    _subject.add("hello ...");
+    _subject.listen( (data) => print( 'listen 2: $data' ) );
+
+
+    _subject.close();
 
   }
 
